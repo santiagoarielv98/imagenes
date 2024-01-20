@@ -1,12 +1,12 @@
 import { FixedSizeGrid as Grid, GridChildComponentProps } from "react-window";
 import "./App.css";
 
-const assetsImages = new URL("./assets/images", import.meta.url).href;
-
 const Cell = ({ style, columnIndex, rowIndex }: GridChildComponentProps) => (
   <div style={{ ...style }}>
     <img
-      src={`${assetsImages}/image_${rowIndex * 3 + columnIndex + 1}.webp`}
+      src={`https://github.com/santiagoarielv98/imagenes/blob/main/src/assets/images/image_${
+        rowIndex * 3 + columnIndex + 1
+      }.webp`}
       alt="placeholder"
       style={{
         width: "100%",
