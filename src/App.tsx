@@ -1,15 +1,26 @@
 import { FixedSizeGrid as Grid, GridChildComponentProps } from "react-window";
 import "./App.css";
 
-const Cell = ({ columnIndex, rowIndex, style }: GridChildComponentProps) => (
-  <div style={style}>
-    <img src={`images/image_1.png`} alt="placeholder" />
-    Item {rowIndex},{columnIndex}
+const assetsImages = new URL("./assets/images", import.meta.url).href;
+
+const Cell = ({ style, columnIndex, rowIndex }: GridChildComponentProps) => (
+  <div style={{ ...style }}>
+    <img
+      src={`${assetsImages}/image_${rowIndex * 3 + columnIndex + 1}.webp`}
+      alt="placeholder"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        filter: "invert(1)",
+      }}
+      loading="lazy"
+    />
   </div>
 );
-
+// 61 imagenes de 200x200
 const Example = () => (
-  <Grid columnCount={1000} columnWidth={200} height={600} rowCount={1000} rowHeight={35} width={600}>
+  <Grid columnCount={3} rowCount={20} columnWidth={200} height={600} rowHeight={200} width={600}>
     {Cell}
   </Grid>
 );
