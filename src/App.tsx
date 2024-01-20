@@ -4,7 +4,7 @@ import "./App.css";
 const Cell = ({ style, columnIndex, rowIndex }: GridChildComponentProps) => (
   <div style={{ ...style }}>
     <img
-      src={`https://github.com/santiagoarielv98/imagenes/blob/main/src/assets/images/image_${
+      src={`https://raw.githubusercontent.com/santiagoarielv98/imagenes/main/src/assets/images/image_${
         rowIndex * 3 + columnIndex + 1
       }.webp`}
       alt="placeholder"
